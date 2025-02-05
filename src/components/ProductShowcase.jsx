@@ -1,6 +1,12 @@
 import img1 from "../assets/honey.jpg";
 
 export default function ProductShowcase() {
+  const scrollToOrder = () => {
+    const orderSection = document.querySelector("#order-section");
+    if (orderSection) {
+      orderSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section className="py-16 bg-amber-100 px-6">
       <div className="container mx-auto grid md:grid-cols-12 gap-8 items-center">
@@ -25,7 +31,10 @@ export default function ProductShowcase() {
               $29.99
             </span>
           </div>
-          <button className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-full text-lg font-semibold w-full">
+          <button
+            onClick={scrollToOrder}
+            className="bg-amber-500 hover:bg-amber-600 text-white px-8 py-3 rounded-full text-lg font-semibold w-full"
+          >
             Claim Offer
           </button>
         </div>
